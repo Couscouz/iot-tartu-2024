@@ -23,7 +23,7 @@ It's also present in many common protocols like :
 
  - MQTT (Message Queuing Telemetry Transport) : which is a standard messaging protocols for IoT, lightweight and efficient
  - Bluetooth
- - 
+ - HTTP
 
     
 The main benefits of such devices are
