@@ -41,5 +41,22 @@ and challenges are most likely
 We can also note that most of people doesn't realize that we are surrounded by tons of IoT devices without realizing it, yet everyone are using them all day long.
     
 We can imagine a scenario such as :
-**EX**
 
+**Harvest management, animal geolocation, Breeding data processing, Integrated messaging**
+
+*The Holy Cow*
+
+Farmer : Mikael, Neighbor: Walt, Cow: Marguarita
+
+Mikael is the owner of a huge farm in Cuzco in Peru. He has 999 cows which are daily running in his 99 acres.
+He also has some wheat fields in order to feed his cows.
+The weather is sunny like 26 and Mikael is riding his tractor in one of his giant wheat field.
+He looks down at his iPad and sees the progress of his harvest in live.
+An audible and visual notification interrupts him, indicating that one of his beasts is no longer within his perimeter (field).
+He puch the notification that opens the application, in which all his cows are geolocated and represented by green dots, except for one by a red dot, highlighted by the application.
+Mikael then clicks on the red dot and accesses a wealth of data about the cow. He can see its exact location, speed and direction, as each cow is fitted with a GPS collar.
+He then decides to call Walt, his neighbor, via the app to intercept Marguarita.
+Mikael transfers Marguarita's data to Walt, who can then react and retrieve the cow.
+Once Marguarita has been caught, Walt informs Mikael via the app's messaging system, who then unlocks access to the fence remotely.
+Walt can cross the fence with his tractor and Marguarita.
+And Mikael hasn't moved from his tractor, so he can finish harvesting with peace of mind.
