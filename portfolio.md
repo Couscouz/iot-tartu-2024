@@ -22,8 +22,12 @@ We can also note that most of people doesn't realize that we are surrounded by t
     
 We can imagine a scenario such as :
 
-**Title**
+**Harvest management, animal geolocation, Breeding data processing, Integrated messaging**
+
+*The Holy Cow*
+
 Farmer : Mikael, Neighbor: Walt, Cow: Marguarita
+
 Mikael is the owner of a huge farm in Cuzco in Peru. He has 999 cows which are daily running in his 99 acres.
 He also has some wheat fields in order to feed his cows.
 The weather is sunny like 26 and Mikael is riding his tractor in one of his giant wheat field.
