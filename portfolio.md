@@ -1,6 +1,10 @@
 
 # Portfolio
 
+## Who are we ?
+
+We're two French guys who are here to discover the principles of the IoT. We have the same name and come from the same engineering school. Our main course of study is cybersecurity, but we're keen to learn more about many aspects of the IoT. We're curious, committed and determined.
+
 ## What is IoT
 
 The Internet of Things covers a lot of devices, which can be :
