@@ -4,9 +4,9 @@
 
 ## Who are we ?
 
-We are tow french people who are here to discover principles of IoT. We have the same name and we are also from the same engineering school.
+We're two French guys who are here to discover the principles of the IoT. We have the same name and come from the same engineering school. Our main course of study is cybersecurity, but we're keen to learn more about many aspects of the IoT. We're curious, committed and determined.
 
-## What is IoT ?
+## What is IoT
 
 IoT is a generic terms which is use to gather billion of connected devices in a wide range of fields such as :
  - Health Care
