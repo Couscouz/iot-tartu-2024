@@ -74,6 +74,14 @@ We made up a diagram of the global iot architecture, it can be found under the n
 
 The ESP ecosystem, primarily centered around the ESP8266 and ESP32 microcontrollers, has gained immense popularity in the maker and DIY communities due to its affordability, versatility, and ease of use.
 
+Arduino IDE compatible (as well as IOT Empire framework)
+ESP8266 is as cheap as a good coffee (chip less than 1$)
+A lot of versions (with batteries, relays ...)
+ESP32 is the successor of ESP8266
+Uses cases : Sensors and switches
+
+So as a conclusion, when you see the price of such devices, the "ease" of use, we can easily say that this is democratization of hardware.
+
 **Practical**
 
 After finishing the *iot_kit_inventory.jpg* table, with all the details of each component, we started the real practical.
