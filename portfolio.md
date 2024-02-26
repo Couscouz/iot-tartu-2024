@@ -44,3 +44,100 @@ Mikael transfers Marguarita's data to Walt, who can then react and retrieve the 
 Once Marguarita has been caught, Walt informs Mikael via the app's messaging system, who then unlocks access to the fence remotely.
 Walt can cross the fence with his tractor and Marguarita.
 And Mikael hasn't moved from his tractor, so he can finish harvesting with peace of mind.
+
+
+
+
+## Week 2
+
+**CLOUD Schema**
+
+
+**Informations about ESP ecosystem**
+
+The ESP ecosystem, primarily centered around the ESP8266 and ESP32 microcontrollers, has gained immense popularity in the maker and DIY communities due to its affordability, versatility, and ease of use.
+
+[videos stuff recap]
+
+**Practical**
+
+First of all, we started with a ESP8266 board and the simple blink program. It turned out to work pretty well. The installation can be found in the picture *blinking_led.jpg*
+
+Then we added a button to change the blink speed, and we made up this :
+
+```c++
+int delayTime = 1000;
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(D4, OUTPUT);
+  pinMode(D6, INPUT_PULLUP); // Activer la résistance de pull-up interne
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  int buttonState = digitalRead(D6);
+
+  // Si le bouton est enfoncé, diminuez la vitesse de clignotement
+  if (buttonState == LOW) {
+    delayTime = 2000; // Changer le délai à 2 secondes
+  } else {
+    delayTime = 200; // Sinon, garder le délai à 1 seconde
+  }
+  digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(D4, LOW);
+  // turn the LED on (HIGH is the voltage level)
+  delay(delayTime);
+  digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(D4, HIGH);
+  // turn the LED off by making the voltage LOW
+  delay(delayTime);
+}
+```
+
+The picture of the installation is *blinking_led_with_button.jpg*
+
+Then we changed a bit the code to try to power the leds on and off at the same time, but we didnt manage to do so and the result was an alterating lighting. The code was :
+
+```c++
+const int LED_PIN_INTERNAL = LED_BUILTIN; // Broche pour la LED interne
+const int LED_PIN_EXTEWe improved our installation a bitRNAL = D4;          // Broche pour la LED externe
+const int BUTTON_PIN = D6;                // Broche pour le bouton
+
+int delayTime = 1000; // Délai initial de clignotement (1 seconde)
+bool ledsOn = true;   // Variable pour suivre l'état actuel des LEDs
+bool OldButtonState = HIGH; 
+
+void setup() {
+  pinMode(LED_PIN_INTERNAL, OUTPUT);
+  pinMode(LED_PIN_EXTERNAL, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP); // Activer la résistance de pull-up interne
+
+  // Initialisez les LEDs à l'état initial (allumées)
+  digitalWrite(LED_PIN_INTERNAL, LOW);
+  digitalWrite(LED_PIN_EXTERNAL, LOW);
+}
+
+void loop() {
+  // Lire l'état actuel du bouton
+  int buttonState = digitalRead(BUTTON_PIN);
+
+  // Vérifier s'il y a eu un changement d'état du bouton
+  if (buttonState != OldButtonState) {
+      if (ledsOn) {
+        digitalWrite(LED_PIN_INTERNAL, HIGH);
+        digitalWrite(LED_PIN_EXTERNAL, HIGH);
+        ledsOn = false;
+      } else {
+        digitalWrite(LED_PIN_INTERNAL, LOW);
+        digitalWrite(LED_PIN_EXTERNAL, LOW);
+        ledsOn = true;
+      } 
+  }
+}
+```
+
+**RGB LED color mixer**
+
+....
