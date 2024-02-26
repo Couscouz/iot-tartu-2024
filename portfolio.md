@@ -68,14 +68,15 @@ And Mikael hasn't moved from his tractor, so he can finish harvesting with peace
 
 **CLOUD Schema**
 
+We made up a diagram of the global iot architecture, it can be found under the name *iot_architecture.jpg*
 
 **Informations about ESP ecosystem**
 
 The ESP ecosystem, primarily centered around the ESP8266 and ESP32 microcontrollers, has gained immense popularity in the maker and DIY communities due to its affordability, versatility, and ease of use.
 
-[videos stuff recap]
-
 **Practical**
+
+After finishing the *iot_kit_inventory.jpg* table, with all the details of each component, we started the real practical.
 
 First of all, we started with a ESP8266 board and the simple blink program. It turned out to work pretty well. The installation can be found in the picture *blinking_led.jpg*
 
@@ -156,4 +157,41 @@ void loop() {
 
 **RGB LED color mixer**
 
-....
+Then, we went to try the RGB mixer. It didn't work out as well as we'd hoped and we ended up trying several things (single-colored pine ...) which didn't work out.
+The assembly is in picture *rbg_mixer_v1.jpg*
+The last version of code that we used is : 
+
+```c++
+const int PIN_RED   = D5;
+const int PIN_GREEN = D6;
+const int PIN_BLUE  = D7;
+
+void setup() {
+  pinMode(PIN_RED,   OUTPUT);
+  pinMode(PIN_GREEN, OUTPUT);
+  pinMode(PIN_BLUE,  OUTPUT);
+}
+
+void loop() {
+  // color code #00C9CC (R = 0,   G = 201, B = 204)
+  analogWrite(PIN_RED,   0);
+  analogWrite(PIN_GREEN, 201);
+  analogWrite(PIN_BLUE,  0);
+
+  delay(1000); // keep the color 1 second
+
+  // color code #F7788A (R = 247, G = 120, B = 138)
+  analogWrite(PIN_RED,   200);
+  analogWrite(PIN_GREEN, 0);
+  analogWrite(PIN_BLUE,  0);
+
+  delay(1000); // keep the color 1 second
+
+  // color code #34A853 (R = 52,  G = 168, B = 83)
+  analogWrite(PIN_RED,   0);
+  analogWrite(PIN_GREEN, 0);
+  analogWrite(PIN_BLUE,  200);
+
+  delay(1000); // keep the color 1 second
+}
+```
