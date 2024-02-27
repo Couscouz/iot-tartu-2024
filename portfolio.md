@@ -127,7 +127,7 @@ Then we changed a bit the code to try to power the leds on and off at the same t
 
 ```c++
 const int LED_PIN_INTERNAL = LED_BUILTIN; // Broche pour la LED interne
-const int LED_PIN_EXTEWe improved our installation a bitRNAL = D4;          // Broche pour la LED externe
+const int LED_PIN_EXTERNAL = D4;          // Broche pour la LED externe
 const int BUTTON_PIN = D6;                // Broche pour le bouton
 
 int delayTime = 1000; // Délai initial de clignotement (1 seconde)
