@@ -15,15 +15,19 @@ Read more about  PULLUP/PULLDOWN resistors.
 What is the option INPUT_PULLUP?
 
 
-Computer (browser or phone) to Microcontroller via Webrequest.
+**Computer (browser or phone) to Microcontroller via Webrequest.**
  - (O) Install webhook, flask, or express and generate memes and/or jokes on request with browser and curl or httpie. Use at least two different forms of requests (get/put).
  - (M) Computer (browser or phone) to microcontroller onboard LED via Web request.
 
 
- - (M) SSH key exchange so that every team member can log in without a password
- - (M) Central team git repository on the gateway with the option to pull - small stack to automate the pull via SSH from one of your laptops.
- - (O) Create an easy way to display web dashboards.
+**(M) SSH key exchange so that every team member can log in without a password**
+
+**(M) Central team git repository on the gateway with the option to pull** - small stack to automate the pull via SSH from one of your laptops.
+
+**(O) Create an easy way to display web dashboards.**
 Kiosk mode for the browser to show one particular URL. Best on a dedicated browser profile or tablet/ old phone.
+
+
 
 (M) means Mandatory (you must include that in the contract).
 
