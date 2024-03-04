@@ -249,3 +249,41 @@ void loop() {
   delay(500);
 }
 ```
+
+**Kiosk Mode firefox**
+
+We put firefox browser of our laptop in kiosk mode, with a default url of "localhost:5000" and a fullscreen, in order to easily display dashboards for the upcoming sessions.
+
+**Meme Generator Flask App**
+
+We made a simple Flask app which is displaying random memes from *meme-api.com*, the code of the falsk app is :
+
+```py
+#!/bin/python
+
+from flask import Flask, render_template
+import requests
+import json
+import random
+
+app = Flask(__name__)
+
+def get_meme():
+        url = "https://meme-api.com/gimme"
+        response = json.loads(requests.request("GET", url).text)
+        meme_large = response["preview"][-2]
+        return meme_large
+
+@app.route("/<user>", methods=["GET", "POST"])
+def set_title(user):
+        meme_pic = get_meme()
+        return render_template("meme_index.html", meme_pic=meme_pic, user=user)
+
+@app.route("/", methods=["GET"])
+def index():
+        meme_pic = get_meme()
+        return render_template("meme_index.html", meme_pic=meme_pic, user="Guest")
+
+app.run(host="0.0.0.0", port=5000)
+```
+
