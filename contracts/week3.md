@@ -24,7 +24,8 @@ What is the option INPUT_PULLUP?
 
 **(M) Central team git repository on the gateway with the option to pull** - small stack to automate the pull via SSH from one of your laptops.
 
-**(O) Create an easy way to display web dashboards.**Kiosk mode for the browser to show one particular URL. Best on a dedicated browser profile or tablet/ old phone.
+**(O) Create an easy way to display web dashboards.**
+Kiosk mode for the browser to show one particular URL. Best on a dedicated browser profile or tablet/ old phone.
 
 
 
