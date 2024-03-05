@@ -256,34 +256,14 @@ We put firefox browser of our laptop in kiosk mode, with a default url of "local
 
 **Meme Generator Flask App**
 
-We made a simple Flask app which is displaying random memes from *meme-api.com*, the code of the falsk app is :
+We made a simple Flask app which is displaying random memes from *meme-api.com*, the code of the falsk app can be found in the project ``TheMemes``
 
-```py
-#!/bin/python
+**Computer to microcontroller RGB LED via Web request**
 
-from flask import Flask, render_template
-import requests
-import json
-import random
+We made a RGB mixer controllable with web request (/red, /green, /blue).
+You can see the result in ``web_rgb_mixer.gif`` and the serial output in ``micro_web_output.jpg``
+The code is in ``arduino_codes/rgb_via_web.ino``
 
-app = Flask(__name__)
+**Button to Webhook, Webhook to curl to RGB Led**
 
-def get_meme():
-        url = "https://meme-api.com/gimme"
-        response = json.loads(requests.request("GET", url).text)
-        meme_large = response["preview"][-2]
-        return meme_large
-
-@app.route("/<user>", methods=["GET", "POST"])
-def set_title(user):
-        meme_pic = get_meme()
-        return render_template("meme_index.html", meme_pic=meme_pic, user=user)
-
-@app.route("/", methods=["GET"])
-def index():
-        meme_pic = get_meme()
-        return render_template("meme_index.html", meme_pic=meme_pic, user="Guest")
-
-app.run(host="0.0.0.0", port=5000)
-```
-
+Then, we made a webhook
