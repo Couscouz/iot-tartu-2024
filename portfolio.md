@@ -127,7 +127,7 @@ Then we changed a bit the code to try to power the leds on and off at the same t
 
 ```c++
 const int LED_PIN_INTERNAL = LED_BUILTIN; // Broche pour la LED interne
-const int LED_PIN_EXTEWe improved our installation a bitRNAL = D4;          // Broche pour la LED externe
+const int LED_PIN_EXTERNAL = D4;          // Broche pour la LED externe
 const int BUTTON_PIN = D6;                // Broche pour le bouton
 
 int delayTime = 1000; // Délai initial de clignotement (1 seconde)
@@ -203,3 +203,87 @@ void loop() {
   delay(1000); // keep the color 1 second
 }
 ```
+## Week 3
+
+**RGB LED button change color**
+
+First we realise to build an installation to change the color of a LED. We inspired ourself with previous results and success to make it works.
+The assembly is in gif *RGB_LED_button.gif*
+the last version of code that we used is :
+
+```c++
+const int PIN_RED   = D5;
+const int PIN_GREEN = D6;
+const int PIN_BLUE  = D7;
+const int PIN_BUTTON = D4;
+int state_button = 0;
+int button_state;
+void setup() {
+  pinMode(PIN_RED,   OUTPUT);
+  pinMode(PIN_GREEN, OUTPUT);
+  pinMode(PIN_BLUE,  OUTPUT);
+  pinMode(PIN_BUTTON, INPUT);
+}
+
+void loop() {
+  button_state = digitalRead(PIN_BUTTON);
+  if(button_state == LOW){
+    state_button += 1;
+  }
+  state_button = state_button % 3;
+  if(state_button == 0){
+    digitalWrite(PIN_RED, LOW);
+    analogWrite(PIN_GREEN, 201);
+    digitalWrite(PIN_BLUE, LOW);
+  }
+    if(state_button == 1){
+    analogWrite(PIN_RED,   200);
+    digitalWrite(PIN_GREEN, LOW);
+    digitalWrite(PIN_BLUE,  LOW);
+  }  
+  if(state_button == 2){
+    digitalWrite(PIN_RED, LOW);
+    digitalWrite(PIN_GREEN,LOW);
+    analogWrite(PIN_BLUE,  200);
+  }
+  delay(500);
+}
+```
+
+**Kiosk Mode firefox**
+
+We put firefox browser of our laptop in kiosk mode, with a default url of "localhost:5000" and a fullscreen, in order to easily display dashboards for the upcoming sessions.
+
+**Meme Generator Flask App**
+
+We made a simple Flask app which is displaying random memes from *meme-api.com*, the code of the falsk app is :
+
+```py
+#!/bin/python
+
+from flask import Flask, render_template
+import requests
+import json
+import random
+
+app = Flask(__name__)
+
+def get_meme():
+        url = "https://meme-api.com/gimme"
+        response = json.loads(requests.request("GET", url).text)
+        meme_large = response["preview"][-2]
+        return meme_large
+
+@app.route("/<user>", methods=["GET", "POST"])
+def set_title(user):
+        meme_pic = get_meme()
+        return render_template("meme_index.html", meme_pic=meme_pic, user=user)
+
+@app.route("/", methods=["GET"])
+def index():
+        meme_pic = get_meme()
+        return render_template("meme_index.html", meme_pic=meme_pic, user="Guest")
+
+app.run(host="0.0.0.0", port=5000)
+```
+
