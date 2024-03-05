@@ -211,7 +211,8 @@ First we realise to build an installation to change the color of a LED. We inspi
 The assembly is in gif *RGB_LED_button.gif*
 the last version of code that we used is :
 
-```const int PIN_RED   = D5;
+```c++
+const int PIN_RED   = D5;
 const int PIN_GREEN = D6;
 const int PIN_BLUE  = D7;
 const int PIN_BUTTON = D4;
