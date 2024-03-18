@@ -233,10 +233,19 @@ The 2 codes are in ``led_via_wifi_button``
 
 **Add more hardware**
 
-We decided to add a temperature sensor in our setup.
-The goal is to turn on the led if the temperature is above X°.
-The code of this node can be found in ``temp_sensor_wifi.ino``
+We decided to add another button in our setup.
+The goal is to have one button controlling the color of the RGB led and another button only for on/off.
+The code of this node can be found in ``led_via_2_wifi_buttons``
 The sum up gif of this all setup is ``3_nodes_wifi.gif``
 
 ## Week 4
 
+For this week we decided to go for the dashboard and the temperature sensor.
+In fact, we ordered some in order to make passive wifi temperature in our flat.
+First of all, we started by setting up Node-Red on the gateway computer, installing dashboards libraries and so.
+
+Then we made a simple MQTT Hello world, composed of a MQTT in into a Debug block in order to print.
+Secondly, a trigger into a MQTT out. Can be seen in ``nodered_1.png``
+
+After this, we made a dashboard composed with a Gauge and a Chart (``nodered_2.png``). 
+In input we have a MQTT sub, giving data to a function in order to extract temperature and send it to the Gauge and the Chart.
