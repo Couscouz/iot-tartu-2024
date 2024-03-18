@@ -3,15 +3,20 @@
 <title>Meme Website | IOT 2024</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="30;url=http://127.0.0.1:5000/" />
-<style>
-body {background-color:#000000;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
-h1{text-align:center;font-family:Arial, sans-serif;color:#ffffff;background-color:#000000;}
-p {text-align:center;font-family:Georgia, serif;font-size:48px;font-style:normal;font-weight:normal;color:#ffffff;background-color:#000000;}
-</style>
+    <style>
+    body {background-color:#000000;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
+    h1{text-align:center;font-family:Arial, sans-serif;color:#ffffff;background-color:#000000;}
+    p {text-align:center;font-family:Georgia, serif;font-size:48px;font-style:normal;font-weight:normal;color:#ffffff;background-color:#000000;}
+    form {text-align:center;}
+    </style>
 </head>
 <body>
-<h1>IOT 2024 - Meme website - Welcome {{user}} !</h1>
-<p>Here is the meme, it will change in 30 seconds</p>
-<p><img src="{{meme_pic}}"></p>
+    <h1>IOT 2024 - Meme website - Welcome {{user}} !</h1>
+    <p>Here is the meme, it will change in 30 seconds</p>
+    <p><img src="{{meme_pic}}"></p>
+    <form method="post" action="/update_name">
+        <input placeholder="Your name" name ="username" type="text">
+        <button type="submit">Actualiser</button>
+    </form>
 </body>
 </html>
