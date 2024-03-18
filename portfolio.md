@@ -208,47 +208,8 @@ void loop() {
 **RGB LED button change color**
 
 First we realise to build an installation to change the color of a LED. We inspired ourself with previous results and success to make it works.
-The assembly is in gif *RGB_LED_button.gif*
-the last version of code that we used is :
+The assembly is in gif ``RGB_LED_button.gif`` and the last version of code that we used is in ``rgb_led_button.ino``
 
-```c++
-const int PIN_RED   = D5;
-const int PIN_GREEN = D6;
-const int PIN_BLUE  = D7;
-const int PIN_BUTTON = D4;
-int state_button = 0;
-int button_state;
-void setup() {
-  pinMode(PIN_RED,   OUTPUT);
-  pinMode(PIN_GREEN, OUTPUT);
-  pinMode(PIN_BLUE,  OUTPUT);
-  pinMode(PIN_BUTTON, INPUT);
-}
-
-void loop() {
-  button_state = digitalRead(PIN_BUTTON);
-  if(button_state == LOW){
-    state_button += 1;
-  }
-  state_button = state_button % 3;
-  if(state_button == 0){
-    digitalWrite(PIN_RED, LOW);
-    analogWrite(PIN_GREEN, 201);
-    digitalWrite(PIN_BLUE, LOW);
-  }
-    if(state_button == 1){
-    analogWrite(PIN_RED,   200);
-    digitalWrite(PIN_GREEN, LOW);
-    digitalWrite(PIN_BLUE,  LOW);
-  }  
-  if(state_button == 2){
-    digitalWrite(PIN_RED, LOW);
-    digitalWrite(PIN_GREEN,LOW);
-    analogWrite(PIN_BLUE,  200);
-  }
-  delay(500);
-}
-```
 
 **Kiosk Mode firefox**
 
@@ -256,7 +217,7 @@ We put firefox browser of our laptop in kiosk mode, with a default url of "local
 
 **Meme Generator Flask App**
 
-We made a simple Flask app which is displaying random memes from *meme-api.com*, the code of the falsk app can be found in the project ``TheMemes``
+We made a simple Flask app which is displaying random memes from *meme-api.com*, the code of the falsk app can be found in the project ``TheMemes``. You can change your name with a simple form and a post request.
 
 **Computer to microcontroller RGB LED via Web request**
 
@@ -266,4 +227,25 @@ The code is in ``arduino_codes/rgb_via_web.ino``
 
 **Button to Webhook, Webhook to curl to RGB Led**
 
-Then, we made a webhook
+Then, we made a controllable led via a wifi connected button on a second node.
+You can see the result in ```led_button_wifi.gif`.
+The 2 codes are in ``led_via_wifi_button``
+
+**Add more hardware**
+
+We decided to add another button in our setup.
+The goal is to have one button controlling the color of the RGB led and another button only for on/off.
+The code of this node can be found in ``led_via_2_wifi_buttons``
+The sum up gif of this all setup is ``3_nodes_wifi.gif``
+
+## Week 4
+
+For this week we decided to go for the dashboard and the temperature sensor.
+In fact, we ordered some in order to make passive wifi temperature in our flat.
+First of all, we started by setting up Node-Red on the gateway computer, installing dashboards libraries and so.
+
+Then we made a simple MQTT Hello world, composed of a MQTT in into a Debug block in order to print.
+Secondly, a trigger into a MQTT out. Can be seen in ``nodered_1.png``
+
+After this, we made a dashboard composed with a Gauge and a Chart (``nodered_2.png``). 
+In input we have a MQTT sub, giving data to a function in order to extract temperature and send it to the Gauge and the Chart.
