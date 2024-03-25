@@ -249,3 +249,11 @@ Secondly, a trigger into a MQTT out. Can be seen in ``nodered_1.png``
 
 After this, we made a dashboard composed with a Gauge and a Chart (``nodered_2.png``). 
 In input we have a MQTT sub, giving data to a function in order to extract temperature and send it to the Gauge and the Chart.
+
+
+In the second part of our work, we went for:
+Temperature sensor on a node, sending each 5 seconds via MQTT to node-red server.
+Then node-red is logging, dashboarding and sending it via Discord bot (``images/dicord.png``).
+
+The node-red flow is in (``flows/discord_dashboard.json``) or also (``images/node-red-1``).
+The node code is in (``arduino-ide/temperature_mqtt.ino``).
