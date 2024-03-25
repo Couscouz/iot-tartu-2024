@@ -1,0 +1,348 @@
+[
+    {
+        "id": "73f04a7f155f5d5d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "69210abbe08ecc28",
+        "type": "ui_gauge",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "group": "d4597361a99a2405",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a3ae2b65524a3604",
+        "type": "ui_chart",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "group": "d4597361a99a2405",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 770,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d3c9a65601b4b672",
+        "type": "inject",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "str",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "69210abbe08ecc28"
+            ]
+        ]
+    },
+    {
+        "id": "124445981fd9960e",
+        "type": "inject",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "15",
+        "payloadType": "str",
+        "x": 190,
+        "y": 500,
+        "wires": [
+            [
+                "69210abbe08ecc28",
+                "a3ae2b65524a3604"
+            ]
+        ]
+    },
+    {
+        "id": "6c45925034030312",
+        "type": "inject",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "str",
+        "x": 210,
+        "y": 440,
+        "wires": [
+            [
+                "69210abbe08ecc28",
+                "a3ae2b65524a3604"
+            ]
+        ]
+    },
+    {
+        "id": "597f76244f42c52d",
+        "type": "inject",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "20",
+        "payloadType": "str",
+        "x": 190,
+        "y": 580,
+        "wires": [
+            [
+                "a3ae2b65524a3604",
+                "69210abbe08ecc28"
+            ]
+        ]
+    },
+    {
+        "id": "37ecec4df49a9e39",
+        "type": "mqtt in",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "topic": "test/test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0e02d218069e8635",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "0c6bf517b1542811"
+            ]
+        ]
+    },
+    {
+        "id": "0c6bf517b1542811",
+        "type": "debug",
+        "z": "73f04a7f155f5d5d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "46c308ba8616671f",
+        "type": "mqtt in",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "topic": "temperature/value",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0e02d218069e8635",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "0c6bf517b1542811",
+                "69210abbe08ecc28",
+                "a3ae2b65524a3604",
+                "626ee24cba75ea45"
+            ]
+        ]
+    },
+    {
+        "id": "11629a80e49ce8b9",
+        "type": "discordMessageManager",
+        "z": "73f04a7f155f5d5d",
+        "name": "",
+        "channel": "",
+        "token": "",
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "62bb3297eb45654d"
+            ]
+        ]
+    },
+    {
+        "id": "62bb3297eb45654d",
+        "type": "debug",
+        "z": "73f04a7f155f5d5d",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "626ee24cba75ea45",
+        "type": "function",
+        "z": "73f04a7f155f5d5d",
+        "name": "function 1",
+        "func": "\n\n\nlet temperatures = {\n    \"Depreter\": \"20\",\n    \"Couzi\": \"19\",\n    \"Titouan\": \"21\"\n};\n\nconst MODE = \"cours\";\n\nlet final = \"\";\n\nfor (let key in temperatures) {\n    if (temperatures.hasOwnProperty(key)) {\n        let temp = temperatures[key];\n        final += \"Il fait \"+temp+\"°C chez \"+key+\"\\n\";\n    }\n}\n\nif (final !== \"\") {\n    final = \"=====TEMPERATURE=====\\n\" + final;\n    final = final + \"=======================\";\n}\n\nif (MODE === \"cours\") {\n    final = \"La température est de \"+msg.payload+\"°C\";\n}\n\nconst DISCORD_CHANNEL_ID = \"1221811019366797382\";\n\nmsg = {\n    \"channel\": DISCORD_CHANNEL_ID,\n    \"payload\": final\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "11629a80e49ce8b9"
+            ]
+        ]
+    },
+    {
+        "id": "d4597361a99a2405",
+        "type": "ui_group",
+        "name": "Dashboard",
+        "tab": "2a89b3c7ea28bc61",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0e02d218069e8635",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2a89b3c7ea28bc61",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
