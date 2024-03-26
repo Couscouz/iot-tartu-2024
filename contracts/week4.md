@@ -8,7 +8,7 @@ As students in this class, we agree to present our skills in using and understan
 
 - Install Node-Red: Setup Node-red and needed modules (dashboard, discord bot handler)
 
-- Demo MQTT Simulator: Simulate temperature sensor with input buttons
+- Demo MQTT Simulator: Simulate temperature sensor with input buttons and random temperature simulator
 
 - Demo MQTT Integrator: Use dashboard to logout data from temperature sensor
 
