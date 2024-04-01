@@ -257,3 +257,54 @@ Then node-red is logging, dashboarding and sending it via Discord bot (``images/
 
 The node-red flow is in (``flows/discord_dashboard.json``) or also (``images/node-red-1``).
 The node code is in (``arduino-ide/temperature_mqtt.ino``).
+
+## Week 5
+
+
+This week, we started by setting up the IoTempower framework
+
+Than, we went for an Hello World deployment. For this, we used a single node as a sensor
+[.....]
+
+
+Our scenario will be:
+A house with a couple and a kid living, the dad is working in the city and the mom lives gardening at home.
+The kid is staying in the house.
+
+Our system is composed of :
+A temperature and humidity sensor, placed inside the house.
+A temperature and wind sensor placed outside the house.
+A window locker placed on the main window.
+
+
+The mom wants the window to be autonomous. So for this :
+
+Goal for humidity is : InsideHum < 60%
+If the inside humidity sensor report a humidity higher than 60%, the window locker released the window, to add fresh air into the room.
+
+
+Goal for temperature is : 20 < InsideTemp < OutsideTemp < 30 :
+if the inside temperature sensor report a higher value than the outside sensor, the window locker released the window.
+if the inside temperature is higher than 30°C, the window locker released the window.
+if the inside temperature is less than 20°C and outside is higher than inside, the window locker released the window.
+
+Goal for weather is : 
+if the wind sensor report a wind faster than 50km/h, the window locker locks the window in closed position.
+The inside humidity and temperature sensor.
+
+Priority of rules :
+weather -> temperature -> humidity
+
+
+Now, let's jump on IoTempower.
+First, we need to setup our 3 nodes
+
+Node 1 : Inside Temperature and Humidity Sensor
+......
+
+
+Node 2 : Outside Temperature and Wind Sensor
+....
+
+Node 3 : Window locker
+....
