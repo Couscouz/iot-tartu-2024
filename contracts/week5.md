@@ -10,7 +10,7 @@ As students in this class, we agree to present our skills in using and understan
 Here are ideas for potential tasks, but also check the old Lab Tasksheet for reference.
 
 
-Setup IoTempower.
+Setup IoTempower.  
 Demo HelloWorld deployement.
 Deploy the House Window Control System with the framework.
 Creation of a small scenario which includes 4 nodes flashed with the framework.
