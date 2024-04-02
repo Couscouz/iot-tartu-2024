@@ -13,4 +13,5 @@ Here are ideas for potential tasks, but also check the old Lab Tasksheet for ref
 Setup IoTempower.
 Demo HelloWorld deployement.
 Deploy the House Window Control System with the framework.
+Creation of a small scenario which includes 4 nodes flashed with the framework.
 
