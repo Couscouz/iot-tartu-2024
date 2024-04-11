@@ -1,0 +1,54 @@
+[
+    {
+        "id": "665d5ee52e22c15e",
+        "type": "mqtt in",
+        "z": "73dda681e85c7906",
+        "name": "Outside Temperature",
+        "topic": "/outside_temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0e02d218069e8635",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 540,
+        "wires": [
+            [
+                "6cd27bd3a4cc72da"
+            ]
+        ]
+    },
+    {
+        "id": "0e02d218069e8635",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

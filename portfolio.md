@@ -262,49 +262,35 @@ The node code is in (``arduino-ide/temperature_mqtt.ino``).
 
 
 This week, we started by setting up the IoTempower framework
-
 Than, we went for an Hello World deployment. For this, we used a single node as a sensor
-[.....]
 
 
 Our scenario will be:
 A house with a couple and a kid living, the dad is working in the city and the mom lives gardening at home.
 The kid is staying in the house.
+The main trouble is the big glass door in the house.
 
-Our system is composed of :
-A temperature and humidity sensor, placed inside the house.
-A temperature and wind sensor placed outside the house.
-A window locker placed on the main window.
+So for this, the goal is to secure, and easily control the management of this door, as well as getting some
+usefull outside data
 
+In this way, our system is composed of :
+A temperature and humidity sensor, placed outside the house.
+A Door Locker placed on the door.
+A button to command this door.
+A RFID Sensor (and the matching card) to lock and unlock the door
+A m5stick to display all the usefull informations (Temperature, Humidity, Door state (open/close), Door Lock state (locked/unlocked))
 
-The mom wants the window to be autonomous. So for this :
+The possibles actions are:
 
-Goal for humidity is : InsideHum < 60%
-If the inside humidity sensor report a humidity higher than 60%, the window locker released the window, to add fresh air into the room.
+The mom can lock and unlock the door with the RFID card, setting up the lock_state in the databse
+Everyone can open the door with the button if it's unlocked
+The mom can display all data on the m5stick by pressing main button, and put it asleep by pressing the bottom button.
+The outside Temperature and Humidity Sensor is sending data every 5 seconds, to the house database.
 
+The database is composed of 3 tables:
+lock_state (storing 0 for locked and 1 for unlocked) about Door Lock State
+window_state (storing 0 for close and 1 for open) about the Door State
+temperature (storing raw value) about outside Temperature
 
-Goal for temperature is : 20 < InsideTemp < OutsideTemp < 30 :
-if the inside temperature sensor report a higher value than the outside sensor, the window locker released the window.
-if the inside temperature is higher than 30°C, the window locker released the window.
-if the inside temperature is less than 20°C and outside is higher than inside, the window locker released the window.
-
-Goal for weather is : 
-if the wind sensor report a wind faster than 50km/h, the window locker locks the window in closed position.
-The inside humidity and temperature sensor.
-
-Priority of rules :
-weather -> temperature -> humidity
-
-
-Now, let's jump on IoTempower.
-First, we need to setup our 3 nodes
-
-Node 1 : Inside Temperature and Humidity Sensor
-......
-
-
-Node 2 : Outside Temperature and Wind Sensor
-....
-
-Node 3 : Window locker
-....
+The Nodered flow can be seen at ``images/house_project_nodered.png``
+The demo of the system can be seen at ``images/house_project_demo.gif``
