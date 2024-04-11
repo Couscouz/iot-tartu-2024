@@ -1,0 +1,22 @@
+[
+    {
+        "id": "17a28958086a137f",
+        "type": "function",
+        "z": "73dda681e85c7906",
+        "name": "WIndow state to screen",
+        "func": "if (msg.payload === \"on\")\n   msg.payload = `Door status : ${msg.payload}`;\nelse if (msg.payload === \"off\")\n   msg.payload = `Door status : ${msg.payload}`;\nelse\n   msg.payload = `Error, msg = ${msg.payload}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 220,
+        "wires": [
+            [
+                "55355dd3a8747d61"
+            ]
+        ]
+    }
+]
