@@ -12,7 +12,6 @@ Here are ideas for potential tasks, but also check the old Lab Tasksheet for ref
 
 Setup IoTempower.
 Demo HelloWorld deployement.
-
 Solving Johanna House issue:
 Deploy the House Window Control System with the framework.
 Deploy Button, Temperature/Humidity Sensor, M5Stick, RFID Sensor 
