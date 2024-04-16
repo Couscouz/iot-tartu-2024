@@ -1,0 +1,12 @@
+[
+    {
+        "id": "b81bfa381ea2e52d",
+        "type": "comment",
+        "z": "73dda681e85c7906",
+        "name": "window__state",
+        "info": "",
+        "x": 860,
+        "y": 560,
+        "wires": []
+    }
+]

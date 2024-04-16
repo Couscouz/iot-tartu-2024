@@ -1,0 +1,27 @@
+[
+    {
+        "id": "47aaa3dcf2312e3d",
+        "type": "switch",
+        "z": "73dda681e85c7906",
+        "name": "Drop if locked",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "locked",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 300,
+        "wires": [
+            [
+                "c9264f3940728bb7"
+            ]
+        ]
+    }
+]
